@@ -1,4 +1,4 @@
-package jp.techacademy.kinugawa.mikako.taskapp
+package jp.techacademy.kinugawa.mikako.taskapp4
 
 import android.content.Intent
 import android.os.Bundle
@@ -12,6 +12,10 @@ import kotlinx.android.synthetic.main.activity_main.*
 import android.app.AlarmManager
 import android.app.PendingIntent
 import android.support.v7.widget.SearchView
+import android.util.Log
+import android.view.View
+import io.realm.RealmQuery
+import jp.techacademy.kinugawa.mikako.taskapp.R
 
 //パッケージ名を含めた文字列をIntentのExtraのキーとして利用するのは、他のアプリのExtraと間違えないようにするため。
 const val EXTRA_TASK = "jp.techacademy.kinugawa.mikako.taskapp.TASK"
@@ -35,9 +39,24 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        //カテゴリ検索バー
-        //search_bar.setOnQueryTextListener(SearchView.OnQueryTextListener)
-        //search_bar.queryHint = "カテゴリ名を入力して検索してください"
+
+        //カテゴリ検索
+        Button1.setOnClickListener {
+
+            val seachWord = EditText.text.toString()
+
+
+            if (seachWord == "") {
+
+
+            } else if (seachWord != ""){
+
+                var categoryWord = mRealm.where(Task::class.java).equalTo("category",seachWord).findAll()
+                Log.d("LOG", categoryWord.toString())
+
+            }
+        }
+
 
 
         //FloatingActionButton

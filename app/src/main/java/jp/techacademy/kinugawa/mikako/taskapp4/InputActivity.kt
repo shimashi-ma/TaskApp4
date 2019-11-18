@@ -1,4 +1,4 @@
-package jp.techacademy.kinugawa.mikako.taskapp
+package jp.techacademy.kinugawa.mikako.taskapp4
 
 import android.app.AlarmManager
 import android.app.DatePickerDialog
@@ -10,6 +10,7 @@ import android.os.Bundle
 import android.support.v7.widget.Toolbar
 import android.view.View
 import io.realm.Realm
+import jp.techacademy.kinugawa.mikako.taskapp.R
 import kotlinx.android.synthetic.main.content_input.*
 import java.util.*
 

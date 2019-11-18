@@ -1,4 +1,4 @@
-package jp.techacademy.kinugawa.mikako.taskapp
+package jp.techacademy.kinugawa.mikako.taskapp4
 
 import android.app.Notification
 import android.app.NotificationChannel
@@ -11,6 +11,7 @@ import android.graphics.BitmapFactory
 import android.os.Build
 import android.support.v4.app.NotificationCompat
 import io.realm.Realm
+import jp.techacademy.kinugawa.mikako.taskapp.R
 
 //ブロードキャストを受け取るためのBroadcastReceiverを作成
 //ブロードキャストとは特定のアプリに向けてIntentを発行するのでなく、システム全体に発行する仕組み
@@ -34,7 +35,9 @@ class TaskAlarmReceiver : BroadcastReceiver() {
         // 通知の設定を行う
         val builder = NotificationCompat.Builder(context, "default")
         builder.setSmallIcon(R.drawable.small_icon)
-        builder.setLargeIcon(BitmapFactory.decodeResource(context.resources, R.drawable.large_icon))
+        builder.setLargeIcon(BitmapFactory.decodeResource(context.resources,
+            R.drawable.large_icon
+        ))
         builder.setWhen(System.currentTimeMillis())
         builder.setDefaults(Notification.DEFAULT_ALL)
         builder.setAutoCancel(true)

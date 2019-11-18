@@ -6,23 +6,33 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context=".MainActivity">
+    tools:context="jp.techacademy.kinugawa.mikako.taskapp4.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
 
-
-        <SearchView
-            android:id="@+id/search_bar"
+        <EditText
+            android:id="@+id/EditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:queryHint="カテゴリ名で検索"/>
+            android:hint="カテゴリ名を入力"/>
 
+        <Button
+            android:id="@+id/Button1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="検索"/>
 
         <ListView
             android:id="@+id/listView1"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/search_bar"/>
+            android:layout_below="@id/Button1"/>
 
+    </LinearLayout>
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"

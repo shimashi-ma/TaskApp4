@@ -5,7 +5,7 @@
     <uses-permission android:name="android.permission.WAKE_LOCK"/> //画面スリープ中でもブロードキャストを受け取る
 
     <application
-        android:name=".TaskApp"
+        android:name="jp.techacademy.kinugawa.mikako.taskapp4.TaskApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -13,17 +13,17 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".InputActivity"
+        <activity android:name="jp.techacademy.kinugawa.mikako.taskapp4.InputActivity"
             android:label="タスク"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName="jp.techacademy.kinugawa.mikako.taskapp4.MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="jp.techacademy.kinugawa.mikako.taskapp.MainActivity"/>
+                android:value="jp.techacademy.kinugawa.mikako.taskapp4.MainActivity"/>
         </activity>
 
         <activity
-            android:name=".MainActivity"
+            android:name="jp.techacademy.kinugawa.mikako.taskapp4.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme">
             <intent-filter>
@@ -33,7 +33,7 @@
             </intent-filter>
         </activity>
 
-        <receiver android:name=".TaskAlarmReceiver"/>
+        <receiver android:name="jp.techacademy.kinugawa.mikako.taskapp4.TaskAlarmReceiver"/>
 
     </application>
 
