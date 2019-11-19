@@ -48,13 +48,26 @@ class MainActivity : AppCompatActivity() {
 
             if (seachWord == "") {
 
+                reloadListView()
+
 
             } else if (seachWord != ""){
 
-                var categoryWord = mRealm.where(Task::class.java).equalTo("category",seachWord).findAll()
+                var categoryWord = mRealm.where(Task::class.java).equalTo("category",seachWord).findAll().sort("date", Sort.DESCENDING)
                 Log.d("LOG", categoryWord.toString())
 
+                // 上記の結果を、mRealm.copyFromRealm(taskRealmResults) でコピーして、アダプタのTaskListにセットする
+                mTaskAdapter.taskList = mRealm.copyFromRealm(categoryWord)
+
+                // TaskのListView用のアダプタに渡す
+                listView1.adapter = mTaskAdapter
+
+                //notifyDataSetChangedメソッド データが変わったことを伝えてリストを再描画
+                // 表示を更新するために、アダプターにデータが変更されたことを知らせる
+                mTaskAdapter.notifyDataSetChanged()
+
             }
+
         }
 
 
