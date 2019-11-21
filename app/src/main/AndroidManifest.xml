@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="jp.techacademy.kinugawa.mikako.taskapp">
 
-    <uses-permission android:name="android.permission.WAKE_LOCK"/> //画面スリープ中でもブロードキャストを受け取る
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
 
     <application
         android:name="jp.techacademy.kinugawa.mikako.taskapp4.TaskApp"
